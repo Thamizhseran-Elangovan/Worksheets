@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-// Function to find sum
 int findSum(int arr[], int n) {
     int sum = 0;
     for(int i=0; i<n; i++)
@@ -9,12 +8,10 @@ int findSum(int arr[], int n) {
     return sum;
 }
 
-// Function to find average
 double findAverage(int arr[], int n) {
     return (double)findSum(arr, n) / n;
 }
 
-// Function to find maximum
 int findMax(int arr[], int n) {
     int max = arr[0];
     for(int i=1; i<n; i++)
@@ -23,7 +20,6 @@ int findMax(int arr[], int n) {
     return max;
 }
 
-// Function to find minimum
 int findMin(int arr[], int n) {
     int min = arr[0];
     for(int i=1; i<n; i++)
