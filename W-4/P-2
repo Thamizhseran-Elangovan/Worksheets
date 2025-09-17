@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// Call by value
+
 int reverseValue(int num) {
     int rev = 0;
     while(num > 0) {
@@ -11,7 +11,7 @@ int reverseValue(int num) {
     return rev;
 }
 
-// Call by pointer
+
 void reversePointer(int *num) {
     int n = *num, rev = 0;
     while(n > 0) {
@@ -21,7 +21,7 @@ void reversePointer(int *num) {
     *num = rev;
 }
 
-// Call by reference
+
 void reverseReference(int &num) {
     int n = num, rev = 0;
     while(n > 0) {
@@ -38,15 +38,12 @@ int main() {
 
     cout << "Original number: " << num << endl;
 
-    // Call by value
     cout << "Reverse using call by value: " << reverseValue(num) << endl;
 
-    // Call by pointer
     int numPtr = num;
     reversePointer(&numPtr);
     cout << "Reverse using call by pointer: " << numPtr << endl;
 
-    // Call by reference
     int numRef = num;
     reverseReference(numRef);
     cout << "Reverse using call by reference: " << numRef << endl;
