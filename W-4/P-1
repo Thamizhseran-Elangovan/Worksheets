@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+// Function to find sum
+int findSum(int arr[], int n) {
+    int sum = 0;
+    for(int i=0; i<n; i++)
+        sum += arr[i];
+    return sum;
+}
+
+// Function to find average
+double findAverage(int arr[], int n) {
+    return (double)findSum(arr, n) / n;
+}
+
+// Function to find maximum
+int findMax(int arr[], int n) {
+    int max = arr[0];
+    for(int i=1; i<n; i++)
+        if(arr[i] > max)
+            max = arr[i];
+    return max;
+}
+
+// Function to find minimum
+int findMin(int arr[], int n) {
+    int min = arr[0];
+    for(int i=1; i<n; i++)
+        if(arr[i] < min)
+            min = arr[i];
+    return min;
+}
+
+int main() {
+    int n;
+    cout << "Enter number of integers (max 5): ";
+    cin >> n;
+    if(n > 5) {
+        cout << "Error: Enter up to 5 integers only.\n";
+        return 0;
+    }
+
+    int arr[5];
+    cout << "Enter " << n << " integers: ";
+    for(int i=0; i<n; i++)
+        cin >> arr[i];
+
+    cout << "Sum = " << findSum(arr, n) << endl;
+    cout << "Average = " << findAverage(arr, n) << endl;
+    cout << "Maximum = " << findMax(arr, n) << endl;
+    cout << "Minimum = " << findMin(arr, n) << endl;
+
+    return 0;
+}
