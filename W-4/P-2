@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+// Call by value
+int reverseValue(int num) {
+    int rev = 0;
+    while(num > 0) {
+        rev = rev * 10 + num % 10;
+        num /= 10;
+    }
+    return rev;
+}
+
+// Call by pointer
+void reversePointer(int *num) {
+    int n = *num, rev = 0;
+    while(n > 0) {
+        rev = rev * 10 + n % 10;
+        n /= 10;
+    }
+    *num = rev;
+}
+
+// Call by reference
+void reverseReference(int &num) {
+    int n = num, rev = 0;
+    while(n > 0) {
+        rev = rev * 10 + n % 10;
+        n /= 10;
+    }
+    num = rev;
+}
+
+int main() {
+    int num;
+    cout << "Enter an integer: ";
+    cin >> num;
+
+    cout << "Original number: " << num << endl;
+
+    // Call by value
+    cout << "Reverse using call by value: " << reverseValue(num) << endl;
+
+    // Call by pointer
+    int numPtr = num;
+    reversePointer(&numPtr);
+    cout << "Reverse using call by pointer: " << numPtr << endl;
+
+    // Call by reference
+    int numRef = num;
+    reverseReference(numRef);
+    cout << "Reverse using call by reference: " << numRef << endl;
+
+    return 0;
+}
